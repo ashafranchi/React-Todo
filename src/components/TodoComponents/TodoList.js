@@ -3,10 +3,13 @@ import Todo from "./Todo";
 
 function TodoList(props) {
     return (
-        <div>
-            {props.TodoListdata.map((todo, index) => {
-                return <todo todo = {todo} key={index} />;
-            })};
+        <div className="List">
+            {props.todos.map(todo => (
+                <Todo
+                handleToggleComplete={props.handleToggleTodoComplete}
+                key={todo.id}
+                todo={todo}/>
+             ))}
         </div>
     );
 };
